@@ -1,0 +1,65 @@
+#pr21
+/*To print the size of various basic datatypes*/
+#include <stdio.h>
+int main()
+{
+    char c;
+    int i;
+    float f;
+    double d;
+
+    printf("Size of char = %d bytes\n", sizeof(c));
+    printf("Size of int = %d bytes\n", sizeof(i));
+    printf("Size of float = %d bytes\n", sizeof(f));
+    printf("Size of double = %d bytes\n", sizeof(d));
+}
+
+#pr22
+/*To calculate the total bill of 3 products*/
+#include <stdio.h>
+int main()
+{
+    float p1, p2, p3, tot, tax, amt;
+    int q1, q2, q3;
+
+    printf("Enter price of product 1: ");
+    scanf("%f", &p1);
+    printf("Enter quantity of product 1: ");
+    scanf("%d", &q1);
+    printf("Enter price of product 2: ");
+    scanf("%f", &p2);
+    printf("Enter quantity of product 2: ");
+    scanf("%d", &q2);
+    printf("Enter price of product 3: ");
+    scanf("%f", &p3);
+    printf("Enter quantity of product 3: ");
+    scanf("%d", &q3);
+
+    tot = (p1 * q1) + (p2 * q2) + (p3 * q3);
+    tax = (tot * 10)/ 100;
+    amt = tot + tax;
+
+    printf("\n--------Receipt--------\n");
+    printf("\nTotal Bill = Rs. %f", tot);
+    printf("\nTax (10%%) = Rs. %f", tax);
+    printf("\nAmount to be Paid = Rs. %f\n", amt);
+}
+
+#pr23
+/*To calculate final food bill with 12% GST and conditional 5% discount.*/
+#include <stdio.h>
+int main()
+{
+    float tot, gst, discount, finalAmount;
+
+    printf("Enter the total food order amount: Rs. ");
+    scanf("%f", &tot);
+
+    gst = tot * 12 / 100;
+    discount = (tot > 1000) ? ((tot * 5) / 100) : 0;
+    finalAmount = tot + gst - discount;
+
+    printf("GST: Rs. %f\n", gst);
+    printf("Discount: Rs. %f\n", discount);
+    printf("Final Amount Payable: Rs. %f\n", finalAmount);
+}
